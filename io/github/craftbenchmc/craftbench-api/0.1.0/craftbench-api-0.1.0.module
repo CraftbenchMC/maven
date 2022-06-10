@@ -1,0 +1,60 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.craftbenchmc",
+    "module": "craftbench-api",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "craftbench-api-0.1.0.jar",
+          "url": "craftbench-api-0.1.0.jar",
+          "size": 261,
+          "sha512": "df201b1cdf017ea7d558da42a0c5a1ca71f0c9b1e3dd3d47d6973b1b3502a625dd404ffdb9d0b67b5760259d0c658c9c14c23c4c4f9344f1f910555f91412214",
+          "sha256": "0820a2ae99542d8ff1974d2d3ff5faf424fc9dbb3a043cd51dc97c51afd46685",
+          "sha1": "f35a9f8f4619e9ad8885666e602b4ff15e36957f",
+          "md5": "47e707afadb59681a60dae53f14699c2"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "craftbench-api-0.1.0.jar",
+          "url": "craftbench-api-0.1.0.jar",
+          "size": 261,
+          "sha512": "df201b1cdf017ea7d558da42a0c5a1ca71f0c9b1e3dd3d47d6973b1b3502a625dd404ffdb9d0b67b5760259d0c658c9c14c23c4c4f9344f1f910555f91412214",
+          "sha256": "0820a2ae99542d8ff1974d2d3ff5faf424fc9dbb3a043cd51dc97c51afd46685",
+          "sha1": "f35a9f8f4619e9ad8885666e602b4ff15e36957f",
+          "md5": "47e707afadb59681a60dae53f14699c2"
+        }
+      ]
+    }
+  ]
+}
