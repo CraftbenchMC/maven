@@ -37,6 +37,10 @@ def createIndex(path: str, relative: str, files: {}):
             </a>
         """
     
+    title = "/" + path
+    if path == "":
+        title = "/"
+    
     return f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +49,7 @@ def createIndex(path: str, relative: str, files: {}):
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="{relative}css/index.css" rel="stylesheet" />
-        <title>Index of {path}</title>
+        <title>Index of {title}</title>
     </head>
     <body>
         <main>
