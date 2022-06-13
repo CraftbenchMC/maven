@@ -111,6 +111,9 @@ def createIndexFiles(root = os.getcwd()):
     folderDict = {}
     
     for _folder in _folders:
+        if "javadoc" in _folder:
+            continue
+            
         folder = _folder.replace(os.getcwd() + "/", "")
         folders.append(folder)
         relative = "../" * len(folder.split("/"))
