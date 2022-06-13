@@ -3,6 +3,9 @@
 import os
 import pathlib
 import collections
+import zipfile
+
+from pathlib import Path
 
 def createIndex(path: str, relative: str, files: {}):
     breadcrumbs = f'<a href="{relative}" class="breadcrumb">maven</a><p class="divider">/</p>'
@@ -76,6 +79,15 @@ def deleteIndexFiles():
     for file in indexFiles:
         os.remove(file)
 
+def rmdir(directory):
+    directory = Path(directory)
+    for item in directory.iterdir():
+        if item.is_dir():
+            rmdir(item)
+        else:
+            item.unlink()
+    directory.rmdir()
+
 def createIndexFiles(root = os.getcwd()):
     __folders = os.listdir(root)
     _folders = []
@@ -114,12 +126,20 @@ def createIndexFiles(root = os.getcwd()):
                     files[file] = "folder"
                 else:
                     files[file] = "file"
+                    if "javadoc" in file and file.endswith(".jar"):
+                        with zipfile.ZipFile(key + "/" + file, "r") as zipf:
+                            if os.path.exists(key + "/" + file + ".d"):
+                                rmdir(key + "/" + file + ".d")
+                            
+                            os.mkdir(key + "/" + file + ".d")
+                            zipf.extractall(key + "/" + file + ".d")
         
         index = createIndex(key, val, files)
         
-        with open(key + "/index.html", "w") as file:
-            file.write(index)
-            file.close()
+        if not os.path.exists(key + "/index.html"):
+            with open(key + "/index.html", "w") as file:
+                file.write(index)
+                file.close()
     
     files = {}
         
